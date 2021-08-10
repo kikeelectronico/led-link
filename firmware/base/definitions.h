@@ -1,6 +1,6 @@
-String version_code = "1";
+char version_code[2] = "1";
 int baudrate = 115200;
-uint8_t eeprom_size = 512;
+int eeprom_size = 512;
 
 struct configuration_struct {
   char ssid[50];

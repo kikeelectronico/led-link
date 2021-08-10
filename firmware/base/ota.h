@@ -1,1 +1,1 @@
-void checkForUpdates(String update_server, String version_code);
+void checkForUpdates(char* update_server, char* version_code);

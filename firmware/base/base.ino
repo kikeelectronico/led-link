@@ -27,7 +27,7 @@ void setup() {
 
   Serial.println("\r\nConnected");
 
-  checkForUpdates(String(configuration.update_server), version_code);
+  checkForUpdates(&configuration.update_server[0], &version_code[0]);
 
 }
 

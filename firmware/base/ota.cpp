@@ -1,9 +1,11 @@
-#include <Arduino.h>
 #include <ESP32httpUpdate.h>
 
-void checkForUpdates(String update_server, String version_code) {
+void checkForUpdates(char* update_server, char* version_code) {
 
-  String binURL = update_server + "/firmware/base_v" + version_code + ".bin";
+  char* binURL = update_server;
+  strcat(binURL,"/firmware/base_v");
+  strcat(binURL,version_code);
+  strcat(binURL,".bin");
 
   t_httpUpdate_return ret = ESPhttpUpdate.update( binURL );
   switch(ret) {
