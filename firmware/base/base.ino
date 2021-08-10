@@ -4,14 +4,7 @@
 #include <EEPROM.h>
 
 #include "ota.h"
-
-String version_code = "1";
-
-struct configuration_struct {
-  char ssid[50];
-  char password[50];
-  char update_server[100];
-};
+#include "definitions.h"
 
 configuration_struct configuration;
 
