@@ -1,36 +1,42 @@
-#include <ESP8266HTTPClient.h>
-#include <ESP8266httpUpdate.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ESP32httpUpdate.h>
+#include <EEPROM.h>
 
-const char* binURL = "http://github.com/kikeelectronico/led-link/releases/download/1/base.ino.bin";
+#include "ota.h"
 
-void checkForUpdates() {
+String version_code = "1";
 
-  HTTPClient httpClient;
-  httpClient.begin( binURL );
-  int httpCode = httpClient.GET();
-  if( httpCode == 200 ) {
-    Serial.println( "Preparing to update" );
-    t_httpUpdate_return ret = ESPhttpUpdate.update( binURL );
+struct configuration_struct {
+  char ssid[50];
+  char password[50];
+  char update_server[100];
+};
 
-    switch(ret) {
-      case HTTP_UPDATE_FAILED:
-        Serial.printf("HTTP_UPDATE_FAILD Error (%d): %s", ESPhttpUpdate.getLastError(), ESPhttpUpdate.getLastErrorString().c_str());
-        break;
+configuration_struct configuration;
 
-      case HTTP_UPDATE_NO_UPDATES:
-        Serial.println("HTTP_UPDATE_NO_UPDATES");
-        break;
-    }
-  }
-  else {
-    Serial.print( "Firmware version check failed, got HTTP response code " );
-    Serial.println( httpCode );
-  }
-  httpClient.end();
-}
+const char* binURL = "";
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(115200);
+
+  Serial.println("\r\n\r\nWELCOME TO LED LINK");
+  Serial.println("\r\n");
+  EEPROM.begin(512);  
+  EEPROM.get(0, configuration);
+
+  Serial.print("Connecting to ");
+  Serial.println(configuration.ssid);
+  WiFi.begin(configuration.ssid, configuration.password);
+
+  while (WiFi.status() != WL_CONNECTED){
+    Serial.print(".");
+    delay(1000);
+  }
+
+  Serial.println("\r\nConnected");
+
+  checkForUpdates(String(configuration.update_server), version_code);
 
 }
 
