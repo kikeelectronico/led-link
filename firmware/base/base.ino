@@ -15,8 +15,6 @@ struct configuration_struct {
 
 configuration_struct configuration;
 
-const char* binURL = "";
-
 void setup() {
   Serial.begin(115200);
 
