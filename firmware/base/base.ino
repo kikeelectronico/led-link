@@ -9,11 +9,11 @@
 configuration_struct configuration;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(baudrate);
 
   Serial.println("\r\n\r\nWELCOME TO LED LINK");
   Serial.println("\r\n");
-  EEPROM.begin(512);  
+  EEPROM.begin(eeprom_size);  
   EEPROM.get(0, configuration);
 
   Serial.print("Connecting to ");
