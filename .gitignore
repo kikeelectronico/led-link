@@ -1,5 +1,6 @@
 # Firmware
 set_EEPROM/
+app/
 
 # Prerequisites
 *.d
