@@ -27,6 +27,7 @@ configuration_struct configuration;
 Led led;
 
 string real_time_color = "#0000ff";
+int number = 0;
 
 void setup() {
   Serial.begin(baudrate);
@@ -154,7 +155,7 @@ void setup() {
 }
 
 void loop() {
-  int number = (int) strtol( &real_time_color[1], NULL, 16);
+  number = (int) strtol( &real_time_color[1], NULL, 16);
   led.on(number >> 16, number >> 8 & 0xFF, number & 0xFF);
   delay(100);
 }
