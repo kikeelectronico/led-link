@@ -107,7 +107,7 @@ const Info = (props) => {
                 <>
                   <View style={styles.button}>
                     <Button
-                      onPress={() => {Linking.openURL(props.ota + "/app/LED_link_v_" + available_app_version + ".apk")}}
+                      onPress={() => {Linking.openURL(props.ota + "/app/ledlink.apk")}}
                       title="Actualizar"
                       color="#333"
                       accessibilityLabel="Actualizar la app"
