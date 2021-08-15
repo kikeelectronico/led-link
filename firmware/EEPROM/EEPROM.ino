@@ -3,10 +3,18 @@
 struct configuration {
   char ssid[50];
   char password[50];
-  char update_server[100];
+  char ota_server[100];
+  char broker_server[100];
+  char topic[50];
+  char ble_name[50];
+  char color[8];
 };
 
 configuration my_configuration = {
+  "",
+  "",
+  "",
+  "",
   "",
   "",
   "",
