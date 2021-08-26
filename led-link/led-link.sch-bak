@@ -1,0 +1,49 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "LED link"
+Date "2021-08-26"
+Rev "1.0"
+Comp ""
+Comment1 "Apache License 2.0"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:USB_C_Receptacle_USB2.0 J?
+U 1 1 6127DDEF
+P 1750 2400
+F 0 "J?" H 1857 3267 50  0000 C CNN
+F 1 "USB_C_Receptacle_USB2.0" H 1857 3176 50  0000 C CNN
+F 2 "" H 1900 2400 50  0001 C CNN
+F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 1900 2400 50  0001 C CNN
+	1    1750 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6127F4A7
+P 1750 3450
+F 0 "#PWR?" H 1750 3200 50  0001 C CNN
+F 1 "GND" H 1755 3277 50  0000 C CNN
+F 2 "" H 1750 3450 50  0001 C CNN
+F 3 "" H 1750 3450 50  0001 C CNN
+	1    1750 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 3450 1750 3300
+NoConn ~ 1450 3300
+NoConn ~ 2350 2000
+NoConn ~ 2350 2100
+NoConn ~ 2350 2300
+NoConn ~ 2350 2400
+NoConn ~ 2350 2500
+NoConn ~ 2350 2600
+NoConn ~ 2350 2900
+NoConn ~ 2350 3000
+$EndSCHEMATC
