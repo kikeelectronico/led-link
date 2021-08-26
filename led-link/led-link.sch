@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:USB_C_Receptacle_USB2.0 J?
+L Connector:USB_C_Receptacle_USB2.0 J1
 U 1 1 6127DDEF
 P 1750 2400
-F 0 "J?" H 1857 3267 50  0000 C CNN
+F 0 "J1" H 1857 3267 50  0000 C CNN
 F 1 "USB_C_Receptacle_USB2.0" H 1857 3176 50  0000 C CNN
 F 2 "" H 1900 2400 50  0001 C CNN
 F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 1900 2400 50  0001 C CNN
@@ -47,18 +47,18 @@ NoConn ~ 2350 2600
 NoConn ~ 2350 2900
 NoConn ~ 2350 3000
 $Comp
-L Diode:1.5KExxA D?
+L Diode:1.5KExxA D1
 U 1 1 61283C60
 P 3200 2300
-F 0 "D?" V 3246 2220 50  0000 R CNN
-F 1 "1.5KExxA" V 3155 2220 50  0000 R CNN
-F 2 "Diode_THT:D_DO-201AE_P15.24mm_Horizontal" H 3200 2100 50  0001 C CNN
-F 3 "https://www.vishay.com/docs/88301/15ke.pdf" H 3150 2300 50  0001 C CNN
+F 0 "D1" V 3246 2220 50  0000 R CNN
+F 1 "ESDA25P35-1U1M" V 3155 2220 50  0000 R CNN
+F 2 "Diode_SMD:D_0603_1608Metric" H 3200 2100 50  0001 C CNN
+F 3 "https://www.mouser.es/datasheet/2/389/dm00312034-1798874.pdf" H 3150 2300 50  0001 C CNN
 	1    3200 2300
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	2350 1800 3200 1800
+	2350 1800 2900 1800
 Wire Wire Line
 	3200 1800 3200 2150
 $Comp
@@ -75,24 +75,24 @@ $EndComp
 Wire Wire Line
 	3200 2600 3200 2450
 $Comp
-L Device:Ferrite_Bead FB?
+L Device:Ferrite_Bead FB1
 U 1 1 61286464
 P 3850 1800
-F 0 "FB?" V 3576 1800 50  0000 C CNN
-F 1 "Ferrite_Bead" V 3667 1800 50  0000 C CNN
-F 2 "" V 3780 1800 50  0001 C CNN
-F 3 "~" H 3850 1800 50  0001 C CNN
+F 0 "FB1" V 3576 1800 50  0000 C CNN
+F 1 "BLM18PG600SZ1D" V 3667 1800 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric" V 3780 1800 50  0001 C CNN
+F 3 "https://www.mouser.es/datasheet/2/281/QNFA9122-1915769.pdf" H 3850 1800 50  0001 C CNN
 	1    3850 1800
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C1
 U 1 1 61286FE9
 P 4350 2300
-F 0 "C?" H 4465 2346 50  0000 L CNN
-F 1 "C" H 4465 2255 50  0000 L CNN
-F 2 "" H 4388 2150 50  0001 C CNN
-F 3 "~" H 4350 2300 50  0001 C CNN
+F 0 "C1" H 4465 2346 50  0000 L CNN
+F 1 "100n" H 4465 2255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4388 2150 50  0001 C CNN
+F 3 "https://www.mouser.es/datasheet/2/40/cx5r-776519.pdf" H 4350 2300 50  0001 C CNN
 	1    4350 2300
 	1    0    0    -1  
 $EndComp
@@ -116,4 +116,30 @@ F 3 "" H 4350 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4350 2600 4350 2450
+$Comp
+L power:VBUS #PWR?
+U 1 1 61289DE2
+P 2900 1800
+F 0 "#PWR?" H 2900 1650 50  0001 C CNN
+F 1 "VBUS" H 2915 1973 50  0000 C CNN
+F 2 "" H 2900 1800 50  0001 C CNN
+F 3 "" H 2900 1800 50  0001 C CNN
+	1    2900 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 2900 1800
+Wire Wire Line
+	2900 1800 3200 1800
+$Comp
+L power:+5V #PWR?
+U 1 1 6128A571
+P 4350 1800
+F 0 "#PWR?" H 4350 1650 50  0001 C CNN
+F 1 "+5V" H 4365 1973 50  0000 C CNN
+F 2 "" H 4350 1800 50  0001 C CNN
+F 3 "" H 4350 1800 50  0001 C CNN
+	1    4350 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 4350 1800
 $EndSCHEMATC
