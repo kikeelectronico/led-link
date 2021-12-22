@@ -1,5 +1,3 @@
 (sym_lib_table
-  (lib (name esp32)(type Legacy)(uri /home/enrique/repo/led-link/led-link/ESP32.lib)(options "")(descr ""))
-  (lib (name led-link)(type Legacy)(uri /home/enrique/repo/led-link/led-link/led-link.lib)(options "")(descr ""))
-  (lib (name led-link-rescue)(type Legacy)(uri ${KIPRJMOD}/led-link-rescue.lib)(options "")(descr ""))
+  (lib (name local)(type Legacy)(uri ${KIPRJMOD}/local.lib)(options "")(descr ""))
 )

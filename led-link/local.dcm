@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ECS-400-10-36B2-CKM-TR
+F https://www.mouser.es/datasheet/2/122/ECX_2236B2-2400583.pdf
+$ENDCMP
+#
+$CMP ESP32-PICO-D4
+D RF Module, ESP32 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 2.7-3.6V, external antenna, QFN-48
+K RF Radio BT ESP ESP32 Espressif external antenna
+F https://www.espressif.com/sites/default/files/documentation/esp32-pico-d4_datasheet_en.pdf
+$ENDCMP
+#
+#End Doc Library
